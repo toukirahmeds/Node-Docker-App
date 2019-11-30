@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                sh 'echo Going to run now'
+                sh 'echo $USER'
             }
         }
     }
