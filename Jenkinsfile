@@ -14,9 +14,14 @@ pipeline {
                 sh 'npm install'
             }
         }
+        stage('Test') { 
+            steps {
+                sh 'npm test'
+            }
+        }
         stage('Deliver') {
             steps {
-                sh './jenkins/scripts/deliver.sh'
+                sh 'npm start'
             }
         }
     }
