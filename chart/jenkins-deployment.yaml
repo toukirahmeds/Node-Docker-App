@@ -18,3 +18,14 @@ spec:
           ports:
             - containerPort: 8080
           imagePullPolicy: Always
+          volumeMounts:
+            - mountPath: "/var/jenkins_home"
+              name: jenkins-data
+            - mountPath: "/var/run/docker.sock"
+              name: docker-daemon
+      volumes:
+        - name: jenkins-data
+          emptyDir: {}
+        - name: docker-daemon
+          hostPath:
+              path: "/var/run/docker.sock"
