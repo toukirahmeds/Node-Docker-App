@@ -12,6 +12,8 @@ spec:
       labels:
         app: jenkins
     spec:
+      securityContext:
+        runAsUser: 0
       containers:
         - name: jenkins
           image: jenkinsci/blueocean
