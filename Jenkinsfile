@@ -11,15 +11,24 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'echo "Installing npm packages"'
+                echo "Installing npm packages"
                 sh 'npm install'
-                sh 'echo "Successfully installed npm packages"'
+                echo "Successfully installed npm packages"
             }
         }
         stage('Test') { 
             steps {
                 echo "Starting Test"
                 sh 'npm test'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo "Starting to deploy"
+                echo "Starting to push into container registry"
+                echo "Successfully pushed to container registry"
+                echo "Starting to deploy into kubernetes"
+                echo "Successfully deployed into kubernetes"
             }
         }
     }
