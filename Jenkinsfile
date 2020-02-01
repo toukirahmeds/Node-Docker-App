@@ -13,6 +13,9 @@ pipeline {
                 echo "Installing npm packages"
                 sh 'npm install'
                 echo "Successfully installed npm packages"
+                script {
+                    docker.build("adfd")
+                }
             }
         }
         stage('Test') { 
