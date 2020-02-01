@@ -14,6 +14,9 @@ pipeline {
                 echo "Installing npm packages"
                 sh 'npm install'
                 echo "Successfully installed npm packages"
+                script {
+                    myapp = docker.build()
+                }
             }
         }
         stage('Test') { 
