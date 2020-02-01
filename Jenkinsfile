@@ -14,9 +14,7 @@ pipeline {
                 echo "Installing npm packages"
                 sh 'npm install'
                 echo "Successfully installed npm packages"
-                script {
-                    docker.build("tetst-jenkins")
-                }
+                sh 'apt-get install docker -y'
             }
         }
         stage('Test') { 
