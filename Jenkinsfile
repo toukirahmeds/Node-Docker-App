@@ -10,7 +10,10 @@ pipeline {
     }
     stages {
         stage('Initialize') {
-            sh 'apt-get install node'
+            steps {
+                sh 'apt-get install node'
+            }
+            
         }
         stage('Build') { 
             steps {
