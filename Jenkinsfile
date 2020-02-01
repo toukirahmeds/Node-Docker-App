@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'ubuntu' 
+            image 'node:6-alpine' 
             args '-p 4200:4200' 
         }
     }
@@ -9,23 +9,11 @@ pipeline {
         CI = 'true'
     }
     stages {
-        stage('Initialize') {
-            steps {
-                sh 'apt-get update -y'
-                sh 'apt-get install nodejs -y'
-                sh 'apt-get install npm -y'
-                sh 'apt-get install docker -y'
-            }
-            
-        }
         stage('Build') { 
             steps {
                 echo "Installing npm packages"
                 sh 'npm install'
                 echo "Successfully installed npm packages"
-                script {
-                    docker.build('sdlfkjd');
-                }
             }
         }
         stage('Test') { 
