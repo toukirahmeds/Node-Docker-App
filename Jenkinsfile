@@ -4,12 +4,18 @@ pipeline {
         CI = 'true'
     }
     stages {
-        stage('Build') { 
+        stage('Build Image') { 
             steps {
                 echo "Successfully installed npm packages"
                 script {
-                    docker.build("gcr.io/twisker.io/my-express-app")
+                    dockerImage = docker.build("gcr.io/twisker.io/my-express-app:latest")
                 }
+            }
+        }
+        stage('Push Image to Registry') {
+            steps {
+                echo "Starting to push image to Google Container Registry"
+                sh "docker container ls -a"
             }
         }
     }
