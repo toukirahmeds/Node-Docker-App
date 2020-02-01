@@ -23,6 +23,9 @@ pipeline {
                 sh 'npm install'
                 echo "Successfully installed npm packages"
                 sh 'apt-get install docker -y'
+                script {
+                    docker.build("testt-jenkins");
+                }
             }
         }
         stage('Test') { 
