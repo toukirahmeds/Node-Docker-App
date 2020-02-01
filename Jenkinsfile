@@ -14,6 +14,7 @@ pipeline {
                 sh 'apt-get update -y'
                 sh 'apt-get install nodejs -y'
                 sh 'apt-get install npm -y'
+                sh 'apt-get install docker -y'
             }
             
         }
@@ -22,7 +23,6 @@ pipeline {
                 echo "Installing npm packages"
                 sh 'npm install'
                 echo "Successfully installed npm packages"
-                sh 'apt-get install docker -y'
                 script {
                     docker.build('sdlfkjd');
                 }
