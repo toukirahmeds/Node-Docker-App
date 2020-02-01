@@ -15,7 +15,7 @@ pipeline {
                 sh 'npm install'
                 echo "Successfully installed npm packages"
                 script {
-                    docker.build()
+                    docker.build("tetst-jenkins")
                 }
             }
         }
