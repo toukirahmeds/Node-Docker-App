@@ -23,7 +23,9 @@ pipeline {
                 sh 'npm install'
                 echo "Successfully installed npm packages"
                 sh 'apt-get install docker -y'
-                bash 'docker build .'
+                script {
+                    docker.build('sdlfkjd');
+                }
             }
         }
         stage('Test') { 
