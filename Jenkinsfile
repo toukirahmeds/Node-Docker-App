@@ -9,12 +9,6 @@ pipeline {
         CI = 'true'
     }
     stages {
-        stage('Initialize') {
-            steps {
-                dockerHome = tool 'myDocker'
-                env.PATH = "${dockerHome}/bin:${env.PATH}"
-            }
-        }
         stage('Build') { 
             steps {
                 echo "Installing npm packages"
