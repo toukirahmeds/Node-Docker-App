@@ -1,5 +1,10 @@
 pipeline {
-    agent any;
+    agent {
+        docker {
+            image 'ubuntu' 
+            args '-p 4200:4200' 
+        }
+    }
     environment {
         CI = 'true'
     }
