@@ -8,7 +8,7 @@ pipeline {
             steps {
                 echo "Successfully installed npm packages"
                 script {
-                    dockerImage = docker.build("gcr.io/twisker.io/my-express-app:latest")
+                    dockerImage = docker.build("gcr.io/twisker/my-express-app:latest")
                 }
             }
         }
