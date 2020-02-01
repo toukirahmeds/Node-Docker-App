@@ -14,9 +14,7 @@ pipeline {
                 echo "Installing npm packages"
                 sh 'npm install'
                 echo "Successfully installed npm packages"
-                script {
-                    myapp = docker.build("gcr.io/twisker/node-docker-projec:latest")
-                }
+                sh 'docker build .'
             }
         }
         stage('Test') { 
