@@ -15,9 +15,9 @@ pipeline {
         stage('Push Image to Registry') {
             steps {
                 echo "Starting to push image to Google Container Registry"
-                sh "docker container ls -a"
+                sh "docker images"
                 script {
-                    docker.withRegistry("https://gcr.io", "toukir@twisker.io") {
+                    docker.withRegistry("https://gcr.io", "google-container-registry") {
                         dockerImage.push();
                     }
                 }
