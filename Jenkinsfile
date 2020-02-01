@@ -13,8 +13,7 @@ pipeline {
             steps {
                 echo "Installing npm packages"
                 sh 'npm install'
-                echo "Successfully installed npm packages"
-                sh 'docker build .'
+                echo "Successfully installed npm packages"\
             }
         }
         stage('Test') { 
