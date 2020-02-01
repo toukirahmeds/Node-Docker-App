@@ -13,6 +13,7 @@ pipeline {
             steps {
                 sh 'apt-get update -y'
                 sh 'apt-get install nodejs -y'
+                sh 'apt-get install npm -y'
             }
             
         }
