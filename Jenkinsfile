@@ -12,6 +12,7 @@ pipeline {
         stage('Initialize') {
             steps {
                 sh 'apt-get update -y'
+                sh 'apt-get install nodejs -y'
             }
             
         }
