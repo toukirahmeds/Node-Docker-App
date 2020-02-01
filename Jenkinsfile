@@ -16,7 +16,11 @@ pipeline {
             steps {
                 echo "Starting to push image to Google Container Registry"
                 sh "docker images"
-                sh "gcloud"
+                script {
+                    docker.withRegistry("https://gcr.io/twisker", "toukir-twisker-gce") {
+                        
+                    }
+                }
             }
         }
     }
