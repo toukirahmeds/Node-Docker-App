@@ -16,6 +16,9 @@ pipeline {
             steps {
                 echo "Starting to push image to Google Container Registry"
                 sh "docker container ls -a"
+                script {
+                    dockerImage.push();
+                }
             }
         }
     }
