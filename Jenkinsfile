@@ -17,7 +17,7 @@ pipeline {
                 echo "Starting to push image to Google Container Registry"
                 sh "docker images"
                 script {
-                    withCredentials([file(credentialsId: 'trwiske-gcr-credentials', variable: 'GC_KEY')]){
+                    withCredentials([file(credentialsId: 'twisker-gcr-credentials', variable: 'GC_KEY')]){
                         sh "cat '$GC_KEY' | docker login -u _json_key --password-stdin https://gcr.io"
                     }
                 }
