@@ -15,13 +15,7 @@ pipeline {
         stage('Push Image to Registry') {
             steps {
                 echo "Starting to push image to Google Container Registry"
-                sh "docker images"
-                script {
-                    withCredentials([usernamePassword( credentialsId: 'toukir-twisker-gce', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-                        docker.withRegistry('https://gcr.io', 'toukir-twisker-gce') {
-                        }
-                    }
-                }
+                sh "gcloud"
             }
         }
     }
