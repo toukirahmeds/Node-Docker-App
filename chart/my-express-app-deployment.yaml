@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: my-express-app
-          image: my-express-app
+          image: gcr.io/twisker/my-express-app
           ports:
             - containerPort: 3000
-          imagePullPolicy: Never
+          imagePullPolicy: Always
