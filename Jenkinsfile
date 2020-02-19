@@ -5,16 +5,21 @@ pipeline {
     }
     stages {
         stage('Initialization') {
-            sh 'npm install'
+            steps {
+                sh 'npm install'
+            }
         }
         stage('Linting') {
-            echo "Linting tool"
-            sh 'npm run lint'
+            steps {
+                echo "Linting tool"
+                sh 'npm run lint'
+            }
         }
-        stage('Test')
-        {
-            echo "Starting to test"
-            sh 'npm run test'
+        stage('Test') {
+            steps {
+                echo "Starting to test"
+                sh 'npm run test'
+            }
         } 
     }
 }
